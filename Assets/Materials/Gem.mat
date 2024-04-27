@@ -57,15 +57,15 @@ Material:
     m_Floats:
     - _BackLight: 0.2
     - _EnableExternalAlpha: 0
-    - _FadeOut: 0.622
+    - _FadeOut: 0.526
     - _Fresnel: 0.17
     - _RefractDelta: -0.262
-    - _RefractFactor: 0.383
-    - _RefractOffset: -0.235
+    - _RefractFactor: 0.199
+    - _RefractOffset: -0.201
     - _Roughness: 0.051
-    - _RoundNormal: 0.32
+    - _RoundNormal: 0.193
     - _Specular: 1
-    - _Transmission: 1.23
+    - _Transmission: 1.19
     - _UseAmbient: 1
     - _UseBack: 1
     - _UseMain: 1
@@ -79,11 +79,11 @@ Material:
     - _AmbientColor: {r: 0.1, g: 0.5, b: 1.1, a: 1}
     - _BackLightColor: {r: 0.18867922, g: 0.18600923, b: 0.18600923, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EyePos: {r: 0, g: 0, b: 3, a: 0}
+    - _EyePos: {r: 0, g: 0, b: 4, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.5372549, g: 0.10588234, b: 0.49528503, a: 1}
+    - _MainColor: {r: 1.5698904, g: 0.46167836, b: 0.051836032, a: 1}
     - _MainLightColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
-    - _MainLightDir: {r: -1.62, g: 2.43, b: 1.22, a: 1}
+    - _MainLightDir: {r: -3.21, g: 3.01, b: 3.06, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ScatterColor: {r: 1.9368205, g: 0.30349293, b: 0.13703915, a: 1}
     - _SecondLightColor: {r: 0.2264151, g: 0.22107512, b: 0.22107512, a: 1}

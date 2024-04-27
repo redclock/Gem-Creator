@@ -19,9 +19,6 @@ namespace RedGame.EditorTools
         private GemPreview _preview = new GemPreview();
         private GemNormalRender _normalRender = new GemNormalRender();
         
-        private bool _previewOutline = true;
-        private bool _previewFaceNormal = true;
-        
         private RenderTexture _rtRender;
         private RenderTexture _rtNormal;
         private Material _renderMaterial;
@@ -56,37 +53,36 @@ namespace RedGame.EditorTools
         private void OnGUI()
         {
             EditorGUILayout.LabelField("Shape Settings", EditorStyles.boldLabel);
-
-            EditorGUI.BeginChangeCheck();
-
             EditorGUI.indentLevel++;
-            DrawSettingsGUI(_setting);
+            bool shapeDirty = ShapeSettingGUI();
             EditorGUI.indentLevel--;
-
-            bool shapeDirty = false;
-            if (EditorGUI.EndChangeCheck() || !_shape.IsCreated)
-            {
-                _shape.CreateShape(_setting);
-                shapeDirty = true;
-            }
-
             EditorGUILayout.Space();
             
-            EditorGUILayout.LabelField("Preview", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Shape Edge", EditorStyles.boldLabel);
             EditorGUI.indentLevel++;
-            _previewOutline = EditorGUILayout.Toggle("Preview Outline", _previewOutline);
-            _previewFaceNormal = EditorGUILayout.Toggle("Preview Face Normal", _previewFaceNormal);
-            EditorGUI.indentLevel--;
             DrawPreview();
+            EditorGUI.indentLevel--;
+            EditorGUILayout.Space();
             
-            EditorGUILayout.LabelField("Rendering", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Normal Map", EditorStyles.boldLabel);
             EditorGUI.indentLevel++;
+            NormalMapGUI(shapeDirty);
+            EditorGUI.indentLevel--;
+            EditorGUILayout.Space();
             
+            EditorGUILayout.LabelField("Final Image", EditorStyles.boldLabel);
+            EditorGUI.indentLevel++;
+            FinalTextureGUI();
+            EditorGUI.indentLevel--;
+            EditorGUILayout.Space();
+        }
+
+        private void NormalMapGUI(bool shapeDirty)
+        {
             EditorGUI.BeginChangeCheck();
             
             _setting.smoothDistance = EditorGUILayout.Slider("Smooth Distance", _setting.smoothDistance, 0, 0.2f);
             _setting.smoothPower = EditorGUILayout.Slider("Smooth Power", _setting.smoothPower, 0.1f, 2.0f);
-            
             CreateRenderTextures();
             if (EditorGUI.EndChangeCheck() || shapeDirty)
             {
@@ -97,10 +93,10 @@ namespace RedGame.EditorTools
                 Graphics.SetRenderTarget(null);
             }
             
-            EditorGUI.indentLevel--;
-            DrawRtToGUI();
+            Rect rect = GetTextureRect();
+            EditorGUI.DrawPreviewTexture(rect, _rtNormal);
             
-            if (GUILayout.Button("Save PNG"))
+            if (GUILayout.Button("Save Normal Map"))
             {
                 string fileName = EditorUtility.SaveFilePanel("Save Gem", "", "gem.png", "png");
                 if (!string.IsNullOrEmpty(fileName))
@@ -108,6 +104,23 @@ namespace RedGame.EditorTools
                     SaveRtToPng(fileName);
                 }
             }
+            
+        }
+
+        private bool ShapeSettingGUI()
+        {
+            EditorGUI.BeginChangeCheck();
+            
+            DrawSettingsGUI(_setting);
+
+            bool shapeDirty = false;
+            if (EditorGUI.EndChangeCheck() || !_shape.IsCreated)
+            {
+                _shape.CreateShape(_setting);
+                shapeDirty = true;
+            }
+
+            return shapeDirty;
         }
 
         private static void DrawSettingsGUI(GemSetting setting)
@@ -124,18 +137,12 @@ namespace RedGame.EditorTools
         {
             var rect = GetTextureRect();
             EditorGUI.DrawRect(rect, Color.black);
-            _preview.DrawPreview(_shape, rect, _previewFaceNormal, _previewOutline);
+            _preview.DrawPreview(_shape, rect);
         }
 
-        private void DrawRtToGUI()
+        private void FinalTextureGUI()
         {
-            if (!_rtNormal)
-                return;
-            
-            Rect rect = GetTextureRect();
-            EditorGUI.DrawPreviewTexture(rect, _rtNormal);
-            
-            _renderMaterial = EditorGUILayout.ObjectField("Material", _renderMaterial, typeof(Material), false) as Material;
+            _renderMaterial = EditorGUILayout.ObjectField("Preview Material", _renderMaterial, typeof(Material), false) as Material;
 
             if (_renderMaterial && _rtRender)
             {
@@ -148,7 +155,7 @@ namespace RedGame.EditorTools
                 Graphics.Blit(_rtNormal, _rtRender, _renderMaterial);
                 RenderTexture.active = oldRt;
                 _renderMaterial.SetTexture(s_mainTex, oldTexture);
-                rect = GetTextureRect();
+                Rect rect = GetTextureRect();
                 EditorGUI.DrawPreviewTexture(rect, _rtRender);
             }
         }

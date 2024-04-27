@@ -8,22 +8,17 @@ namespace RedGame.EditorTools
     {
         private GemShape _shape;
         
-        public void DrawPreview(GemShape shape, Rect rect, bool showFaceNormal, bool showOutline)
+        public void DrawPreview(GemShape shape, Rect rect)
         {
             _shape = shape;
             
             Handles.matrix = Matrix4x4.Translate(rect.center) * Matrix4x4.Scale(
                 new Vector3(1, -1, 1) * 50);
 
-            if (showFaceNormal)
-            {
-                DrawPreviewFaceNormal();
-            }
+            //DrawPreviewFaceNormal();
+            
 
-            if (showOutline)
-            {
-                DrawPreviewOutline();
-            }
+            DrawPreviewOutline();
             
 
             Handles.matrix = Matrix4x4.identity;

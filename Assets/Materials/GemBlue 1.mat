@@ -34,7 +34,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 57df29dc05ac84cb89d3580a08a7de05, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8698e3c52d20246faa13775884923c0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -57,15 +57,15 @@ Material:
     m_Floats:
     - _BackLight: 0.148
     - _EnableExternalAlpha: 0
-    - _FadeOut: 0.666
-    - _Fresnel: 0.553
+    - _FadeOut: 0.64
+    - _Fresnel: 0.375
     - _RefractDelta: 0.5
-    - _RefractFactor: 0.128
+    - _RefractFactor: 0.106
     - _RefractOffset: -0.376
-    - _Roughness: 0.105
-    - _RoundNormal: 0.663
+    - _Roughness: 0.024
+    - _RoundNormal: 0.174
     - _Specular: 1.46
-    - _Transmission: 1.18
+    - _Transmission: 1.12
     - _UseAmbient: 1
     - _UseBack: 1
     - _UseMain: 1
@@ -81,7 +81,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EyePos: {r: 0, g: 0, b: 3, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.45887965, g: 0.6886792, b: 0.3930669, a: 1}
+    - _MainColor: {r: 0.24870951, g: 0.6509434, b: 0.3504953, a: 1}
     - _MainLightColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
     - _MainLightDir: {r: -0.51216984, g: 0.55, b: 0.51, a: 1.5}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
