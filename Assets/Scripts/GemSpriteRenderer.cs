@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -9,22 +6,28 @@ public class GemSpriteRenderer : MonoBehaviour
     private SpriteRenderer _sprite;
     private Light2D _light;
     private Material _material;
+    
+    public Material GemMaterial => _material;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Init()
     {
-        Debug.Log("Start GemSpriteRenderer " + name);
+        if (_sprite)
+            return;
+
         _light = FindObjectOfType<Light2D>();
         _sprite = GetComponent<SpriteRenderer>();
         
         if (_sprite)
         {
-            Debug.Log("Found SpriteRenderer " + name);
             _material = new Material(_sprite.material);
             _material.name = "GemMaterial " + name;
             _sprite.material = _material;
         }
-        
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+       Init();
     }
 
     private void Update()

@@ -14,7 +14,7 @@ Unity Gem Creator 是一个在 Unity 中创建宝石素材的工具。
 
 在 Unity 编辑器中，打开 Gem Creator 窗口（菜单栏 -> Tools -> Create Gem）
 
-![Gem Creator](img/window.png)
+![Gem Creator](img/window.gif)
 
 * **Shape Parameters**: 控制宝石的形状参数
 * **Normal Map**: 生成法线贴图

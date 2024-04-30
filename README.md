@@ -17,7 +17,7 @@ The goal of this tool is to provide a simple and efficient way to create and ren
 
 In the Unity editor, open the Gem Creator window (Menu bar -> Tools -> Create Gem)
 
-![Gem Creator](img/window.png)
+![Gem Creator](img/window.gif)
 
 * **Shape Parameters**: Controls the shape parameters of the gem
 * **Normal Map**: Generates a normal map

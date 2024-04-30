@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gem
+  m_Name: Gem2
   m_Shader: {fileID: 4800000, guid: 3c94e26e7cad416d9954c584c710eaa8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -50,22 +50,22 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShineTex:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BackLight: 0.2
+    - _BackLight: 0.13
     - _EnableExternalAlpha: 0
-    - _FadeOut: 0.526
-    - _Fresnel: 0.238
-    - _RefractDelta: -0.262
-    - _RefractFactor: 0.286
-    - _RefractOffset: -0.63
-    - _Roughness: 0.051
-    - _RoundNormal: 0.155
-    - _Specular: 1
-    - _Transmission: 1.19
+    - _FadeOut: 0.592
+    - _Fresnel: 0.226
+    - _RefractDelta: 0.5
+    - _RefractFactor: 0.18
+    - _RefractOffset: -0.38
+    - _Roughness: 0.053
+    - _RoundNormal: 0.2
+    - _Specular: 1.65
+    - _Transmission: 0.85
     - _UseAmbient: 1
     - _UseBack: 1
     - _UseMain: 1
@@ -78,16 +78,16 @@ Material:
     m_Colors:
     - _AmbientColor: {r: 0.1, g: 0.5, b: 1.1, a: 1}
     - _BackLightColor: {r: 0.18867922, g: 0.18600923, b: 0.18600923, a: 1}
-    - _Color: {r: 0.5283019, g: 0.114008546, b: 0.067283735, a: 1}
-    - _EyePos: {r: 0, g: 0, b: 4, a: 0}
+    - _Color: {r: 0.49081075, g: 1.1348021, b: 0.24087785, a: 1}
+    - _EyePos: {r: 0, g: 0, b: 10, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1.5698904, g: 0.46167836, b: 0.051836032, a: 1}
+    - _MainColor: {r: 0, g: 0.49458084, b: 1.3207548, a: 1}
     - _MainLightColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
-    - _MainLightDir: {r: -3.29, g: 3.01, b: 3.77, a: 1}
+    - _MainLightDir: {r: -0.32, g: 0.4, b: 0.62, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ScatterColor: {r: 1.9368205, g: 0.30349293, b: 0.13703915, a: 1}
+    - _ScatterColor: {r: 0.081991486, g: 0.46967524, b: 1.5660378, a: 1}
     - _SecondLightColor: {r: 0.2264151, g: 0.22107512, b: 0.22107512, a: 1}
     - _SecondLightDir: {r: 1, g: 0.5, b: 0, a: 0}
     - _TansmissionColor: {r: 0.14877437, g: 0.10441571, b: 2.8490562, a: 1}
-    - _TransmissionColor: {r: 0.4528302, g: 0.029100604, b: 0.0021359965, a: 1}
+    - _TransmissionColor: {r: 0.6886792, g: 0.04223048, b: 0.04223035, a: 1}
   m_BuildTextureStacks: []

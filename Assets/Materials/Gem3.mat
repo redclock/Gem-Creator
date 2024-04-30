@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GemBlue 1
+  m_Name: Gem3
   m_Shader: {fileID: 4800000, guid: 3c94e26e7cad416d9954c584c710eaa8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -57,15 +57,15 @@ Material:
     m_Floats:
     - _BackLight: 0.148
     - _EnableExternalAlpha: 0
-    - _FadeOut: 0.64
-    - _Fresnel: 0.375
+    - _FadeOut: 0.651
+    - _Fresnel: 0.459
     - _RefractDelta: 0.5
-    - _RefractFactor: 0.106
-    - _RefractOffset: -0.376
+    - _RefractFactor: 0.213
+    - _RefractOffset: -0.64
     - _Roughness: 0.024
-    - _RoundNormal: 0.174
+    - _RoundNormal: 0.488
     - _Specular: 1.46
-    - _Transmission: 1.12
+    - _Transmission: 1.33
     - _UseAmbient: 1
     - _UseBack: 1
     - _UseMain: 1
@@ -78,7 +78,7 @@ Material:
     m_Colors:
     - _AmbientColor: {r: 0.1, g: 0.5, b: 1.1, a: 1}
     - _BackLightColor: {r: 0.18867922, g: 0.18600923, b: 0.18600923, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.08235295, g: 0.5773062, b: 0.6509804, a: 1}
     - _EyePos: {r: 0, g: 0, b: 3, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 0.24870951, g: 0.6509434, b: 0.3504953, a: 1}

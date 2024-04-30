@@ -5,7 +5,7 @@ Shader "GemCreator/GemRender"
         _MainTex("Texture", 2D) = "white" {}
         _EyePos("Eye Pos", Vector) = (0, 0, 2, 0)
         _MainLightDir("Light Dir", Vector) = (-0.5, -0.5, 2.2, 1)
-        [HDR] _MainColor("Main Color", Color) = (0.1, 0.5, 1.1, 1)
+        [HDR][MainColor] _Color("Main Color", Color) = (0.1, 0.5, 1.1, 1)
 
         [Toggle(USE_SPECULAR)] _UseSpec("Enable Specualar", Float) = 1
         _Roughness("Roughness", Range(0, 1)) = 0.1
@@ -41,7 +41,7 @@ Shader "GemCreator/GemRender"
             float4 _EyePos;
             float4 _MainLightDir;
             
-            float4 _MainColor;
+            float4 _Color;
             
             float _Roughness;
             
@@ -251,8 +251,8 @@ Shader "GemCreator/GemRender"
                 half3 scatterNormal = normalize(lerp(normal, sphereNormal, _RoundNormal)); 
                 
                 #ifdef USE_SCATTER
-                color += computeScattering(scatterNormal, lightDir, _MainColor) * (1 - F);
-                // color += computeScattering(scatterNormal, lightDir2, _MainColor) * （1 - F) * 0.1;
+                color += computeScattering(scatterNormal, lightDir, _Color) * (1 - F);
+                // color += computeScattering(scatterNormal, lightDir2, _Color) * （1 - F) * 0.1;
                 #endif
                 
                 //return float4(color, 1);
@@ -263,7 +263,7 @@ Shader "GemCreator/GemRender"
                 //return backNormal;
                 //backNormal *= 0.5;
                 backNormal = normalize(backNormal * 2 - 1);
-                half3 refractColor = computeBackScattering(backNormal.xyz, -lightDir, _MainColor);
+                half3 refractColor = computeBackScattering(backNormal.xyz, -lightDir, _Color);
                 //backColor = computeTransmission(backNormal.xyz, -lightDir, 0);
                 
                 #ifdef USE_REFRACT
